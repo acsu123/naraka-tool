@@ -1,0 +1,8 @@
+customtkinter
+Pillow
+opencv-python
+numpy
+qrcode[pil]
+requests
+mitmproxy
+logging
