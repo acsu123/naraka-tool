@@ -529,6 +529,7 @@ class NarakaApp(ctk.CTk):
             _set_win_proxy(True)
 
             async def _cert_import():
+                import ctypes
                 await asyncio.sleep(4)
                 cert = Path.home() / ".mitmproxy" / "mitmproxy-ca-cert.cer"
                 if cert.exists():
@@ -539,9 +540,10 @@ class NarakaApp(ctk.CTk):
                             encoding="utf-8", errors="replace",
                             creationflags=flags)
                         if "mitmproxy" not in chk.stdout.lower():
-                            subprocess.run(
-                                ["certutil", "-addstore", "-f", "Root", str(cert)],
-                                capture_output=True, creationflags=flags)
+                            ctypes.windll.shell32.ShellExecuteW(
+                                None, "runas", "certutil",
+                                f'-addstore -f Root "{str(cert)}"',
+                                None, 0)
                     except Exception:
                         pass
 

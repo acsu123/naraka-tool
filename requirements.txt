@@ -6,3 +6,6 @@ qrcode[pil]
 requests
 mitmproxy
 logging
+ctypes
+sys
+pathlib
