@@ -6,7 +6,7 @@ A Windows utility for **Naraka: Bladepoint** with three features:
 - **QR Converter** — converts CN Photobooth share QR codes to Global-compatible ones
 - **CN Proxy** — intercepts and patches the game's API response so converted QR codes are accepted in-game
 
-> UI supports English and Vietnamese (EN / VI toggle).
+> UI supports English and Vietnamese (EN / VI).
 
 ---
 
@@ -53,7 +53,7 @@ python main.py
 2. Click **Select & Convert** and pick the image(s).
 3. Converted images appear in `converted/`.
 4. Log into the game, **then** enable CN Proxy.
-5. In-game, scan the converted QR — the proxy patches the API response on the fly.
+5. In-game, import the converted QR.
 
 ### Character Physics workflow
 1. Select your platform (Steam / Epic / VNG / Custom).
